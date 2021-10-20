@@ -12,3 +12,20 @@ input[type=radio]{
 input:checked + img {
     background-color: peachpuff;
 } 
+#scores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+#submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    background-color: tomato;
+    border-radius: 15%;
+    padding: 5px;
+    margin: 15px;
+}

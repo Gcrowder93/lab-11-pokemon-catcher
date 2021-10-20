@@ -1,16 +1,3 @@
-export const results = [
-    { 
-        id: '',
-        appeared: '',
-        chosen: ''
-    },
-    {
-        id: '',
-        appeared: '',
-        chosen: ''
-    },
-];
-
 export function findById(id, pokes){
 
     for (let poke of pokes) {
@@ -28,14 +15,9 @@ export function getPoke(){
     const pokes = JSON.parse(lsPokemon);
 
     if (!pokes){
-        const pokeString = JSON.stringify(products);
+        const pokeString = JSON.stringify(pokemon);
         localStorage.setItem('POKEMON', pokeString);
     }
     return pokes || pokemon;
 
 }
-
-export function getResults(){
-
-    let 
-} 
