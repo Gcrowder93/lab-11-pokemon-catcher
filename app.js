@@ -50,9 +50,7 @@ let pokemonGen = generatePoke();
 
 button.addEventListener('click', ()=>{
     const selected = document.querySelector('input[type=radio]:checked');
-  // if (!selected) {
-  //   return 
-  // const userSelect = selected.value;
+    generatePoke();
     encounter(pokemonGen[0]);
     encounter(pokemonGen[1]);
     encounter(pokemonGen[2]);
