@@ -1,4 +1,5 @@
 import { pokemon } from './src/pokemon.js';
+import { encounter } from './storage-utils.js';
 console.log(pokemon);
 
 const caughtSpan = document.getElementById('caught');
@@ -38,19 +39,22 @@ const generatePoke = ()=>{
 
     let poke3 = pokemon[rando3];
     pokeImg3.src = poke3.url_image;
-
+    return [
+        poke1,
+        poke2,
+        poke3
+    ];
 };
 
-generatePoke();
+let pokemonGen = generatePoke();
 
 button.addEventListener('click', ()=>{
     const selected = document.querySelector('input[type=radio]:checked');
   // if (!selected) {
   //   return 
   // const userSelect = selected.value;
-    generatePoke();
-    appeared++;
-    appeared++;
-    appeared++;
-    appearSpan.textContent = appeared;
+    encounter(pokemonGen[0]);
+    encounter(pokemonGen[1]);
+    encounter(pokemonGen[2]);
+   
 });

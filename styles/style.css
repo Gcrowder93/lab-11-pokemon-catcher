@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     margin: 20px;
 }
 
@@ -33,5 +34,3 @@ input:checked + img {
 a {
     background-color: red;
 }
-
-h1

@@ -1,26 +1,21 @@
-
+import { pokemon } from './src/pokemon.js';
 
 export function findByPokemon(pokemon, pokes){
 
     for (let poke of pokes) {
-        if (poke.id === id){
+        if (poke.id === pokemon){
             return poke;
         }
     }
 }
 
-import { pokemon } from './pokemon.js';
-
 export function getPoke(){
 
-    let lsPokemon = localStorage.getItem('POKEMON');
-    const pokes = JSON.parse(lsPokemon);
-
-    if (!pokes){
-        const pokeString = JSON.stringify(pokemon);
-        localStorage.setItem('POKEMON', pokeString);
-    }
-    return pokes || pokemon;
+    const pokeString = localStorage.getItem('POKEMON') || '[]';
+    const pokemon = JSON.parse(pokeString);
+    
+    
+    return pokemon;
 
 }
 
