@@ -1,25 +1,87 @@
-# Alchemy Bootstrap Template
+# Pokemon Cathcher App
 
-## Making a plan
+## HTML Elements Needed
+- [ ] Home Page
+  - [ ] Three pokemon image buttons/(radios?)
+    * need id's to watch event listeners
+  - [ ] Results Page
+- [ ] Render results table?/list?
 
-(bolded steps are mandatory, unbolded are for more advanced projects)
+## State to Keep track of
+- [ ] **pokemonCaught** -- total plays
+- [ ] **pokemonChosen** -- selected button
+- [ ] **pokemonAppear** -- the three generated per session
 
-1) **Make a drawing of your app. Simple "wireframes"**
-2) **Once you have a drawing, name the HTML elements you'll need to realize your vision**
-3) **For each HTML element ask: Why do I need this?**
-4) Ask which of out HTML elements are hard coded, and which are dynamically generated?
-5) **Once we know _why_ we need each element, think about how to implement the "Why" as a "How"**
-6) Is there some state we need to initialize?
-7) **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change?**
-8) **Think about how to validate each of your steps**
-9) Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
-10) Consider your data model. What objects will you be using? What are the key/value pairs? What arrays do you need? What needs to live in local storage?
-11) **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+## user events
+* Page Load
+  * generate three pokemon 
+  * update state -- **pokemonAppear**
+  * update view based on state -- render
+* Button Click
+  * increment total plays state -- **pokemonCaught**
+  * increment selected pokemon state -- **pokemonChosen**
+  * if (plays < 10) 
+      * generate three pokemon 
+      * update state -- **pokemonAppear**
+      * update view based on state -- render
+  * else () 
+    * send user to results page
 
 
-## To Run Cypress Tests
-* `npm install`
-* `npm test`
-* Cypress will open -- you should then click "run <#> integration spec(s)"
-    ![](cypress.png)
-* Make sure all tests pass
+## functions
+
+
+### Local Storage Utils Functions -- could be in a separate *storage-utils.js*
+* findById -- reference products lab for this function
+* set Results -- TWO FUNCTIONS
+  * *Encountered* -- 
+    * getResults
+    * increment pokemonAppear
+    * stringify
+    * localStorage.setItem('RESULTS', string)
+  * *Selected* -- 
+    * getResults
+    * increment pokemonChosen
+    * stringify
+    * localStorage.setItem('RESULTS', string)
+* getResults
+  * looks for 'RESULTS' in local storage
+  * if ('RESULTS') exists 
+    * localStorage.getItem('RESULTs')
+    * JSON.parse
+    * return results array
+  * else (no 'RESULTS')
+    * return empty array
+    
+  ```
+  'RESULTS' = [
+    {
+        id: '',
+        appeared: #,
+        chosen: #
+    },
+    {
+        id: '',
+        appeared: #,
+        chosen: #
+    },
+    ...
+]```
+
+
+### home page Functions -- app.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - [ ] Stretch - counter at the top of page to display play count
