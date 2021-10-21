@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
+   
     <title>Pokemon</title>
 </head>
 
@@ -19,30 +20,28 @@
     <h1>Pokemon Catcher</h1>
     <main>
         <div id="pokemon">
-            <label>
-            <input type="radio">
+            <label id="poke-radio1">
+            <input class ="radio1" type="radio">
             <img id="poke1-img">
             </label>
-            <label>
-            <input type="radio">
+            <label id="poke-radio2">
+            <input class="radio2" type="radio">
             <img id="poke2-img">
             </label>
-            <label>
-            <input type="radio">
+            <label id="poke-radio3">
+            <input id="radio3" type="radio">
             <img id="poke3-img">
         </label>
         
         </div>
         <button id="select">Select</button>
-        <div id="scores">
-            <p>Caught: <span id="caught"></span></p>
-            <p>Chose: <span id="chosen"></span></p>
-            <p>Appeared: <span id="appeared"></span></p>
-        </div>
+        
     </main>
-    
+
     <footer>
-        <hr><a href="./otherPage/pokemon.html" l>Data Sleep</a>
+
+        <hr><a href="./results/index.html">Data Page</a>
+        
     </footer>
 
     <script type="module" src="./app.js"></script>

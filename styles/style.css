@@ -4,6 +4,12 @@ body {
     align-items: center;
     text-align: center;
     margin: 20px;
+    background-color:violet
+/*
+    background-image: url(https://pm1.narvii.com/6878/43401b721bf9ea2f83a8274dd1b1922281112075r1-531-469v2_hq.jpg);
+
+*/
+
 }
 
 input[type=radio]{
@@ -11,26 +17,11 @@ input[type=radio]{
 }
 
 input:checked + img {
+    border: solid tomato 2px;
     background-color: peachpuff;
+    border-radius: 25%;
 } 
-#scores {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
-}
 
-#submit {
+div {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100px;
-    background-color: gold;
-    border-radius: 15%;
-    padding: 5px;
-    margin: 15px;
-}
-
-a {
-    background-color: red;
 }
