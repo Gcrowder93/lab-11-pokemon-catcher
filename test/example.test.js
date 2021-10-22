@@ -50,7 +50,7 @@ test ('setResults returns and empty array if there is no RESULTS key in localSto
 
 test ('encounterPokemon increments the shown keu when the item exists in results', (expect) => {
     const expected = [
-        { id: 1, encounter: 1, capture: 1 },
+        { id: 1, encounter: 1, capture: 0 },
     ];
     encounterPokemon(1);
     const string = localStorage.getItem('RESULTS');
