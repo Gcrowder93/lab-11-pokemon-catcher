@@ -1,57 +1,39 @@
-//import { pokemon } from './src/pokemon.js';
-
-export function findByPokemon(pokemon, pokes){
-    for (let poke of pokes) {
-        if (poke.id === pokemon){
-            return poke;
+export function findById(id, items){
+    for (let item of items){
+        if (item.id === id){
+            return item;
         }
     }
 }
 
-export function getPoke(){
-    const pokeString = localStorage.getItem('POKEMON') || '[]';
-    const pokemon = JSON.parse(pokeString);
-    return pokemon;
-}
-
 export function getResults(){
-    const resultString = localStorage.getItem('RESULTS') || [];
+    const resultString = localStorage.getItem('RESULTS') || '[]';
     const result = JSON.parse(resultString);
     return result;
 }
 
-export function getChosen(){
-    const chosenString = localStorage.getItem('RESULT') || [];
-    const chosen = JSON.parse(chosenString);
-    return chosen;
-}
-
-export function capturePokemon(pokemon){
+export function capturePokemon(id){
     let results = getResults();
-    let poke = findByPokemon(pokemon, results);
-    poke.capture++;
+    let item = findById(id, results);
+    item.capture++;
 
-    const stringResult = JSON.stringify(results);
-    localStorage.setItem('RESULTS', stringResult);
+    setResults(results);
 }
 
-export function encounter(pokemon){
-    let pokeArray = getPoke();
-    let foundPoke = findByPokemon(pokemon, pokeArray);
-    if (foundPoke){
-        foundPoke.encounter++;
-        const pokeString = JSON.stringify(pokemon);
-        localStorage.setItem('POKEMON', pokeString);
+export function encounterPokemon(id){
+    let results = getResults();
+    let item = findById(id, results);
+
+    if (item){
+        item.encounter++;
     } else {
-        const newPoke = {
-            pokemon: pokemon.pokemon,
-            encounted: 1,
-            captured: 0,
-        };
-        pokeArray.push(newPoke);
+        const newItem = { id: id, capture: 0, encounter: 1 };
+        results.push(newItem);
     }
-    const arrayString = JSON.stringify(pokeArray);
-    localStorage.setItem('POKEMON', arrayString);
-    return pokeArray;
+    setResults(results);
 }
 
+export function setResults(results){
+    const stringResults = JSON.stringify(results);
+    localStorage.setItem('RESULTS', stringResults);
+}

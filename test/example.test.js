@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { getChosen, getResults } from '../storage-utils';
+import { encounter, getChosen, getResults } from '../storage-utils';
 const test = QUnit.test;
 
 test('time to test a function', (expect) => {
@@ -37,4 +37,14 @@ test ('getChosen returns an empty array if there is no RESULTS key in localStora
     const localStorage = localStorage.getItem('RESULTS');
     const actual = JSON.parse(localStorage);
     expect.deepEqual(actual, actual);
+});
+
+test ('encounter increments the shown keu when the item exists in results', (expect) => {
+    const expected = [
+        { id: 1, encounter: 1, capture: 1 },
+    ];
+    encounter(1);
+    const string = localStorage.getItem('RESULTS');
+    const actual = JSON.parse(string);
+    expect.deepEqual(actual, expected);
 });
