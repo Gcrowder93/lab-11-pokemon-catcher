@@ -17,9 +17,9 @@ export function capturePokemon(id) {
     const capturePokemon = findById(id, newResults);
     
     if (capturePokemon){
-        capturePokemon.picked ++;  
+        capturePokemon.capture++;  
     } else {
-        const newCapturePokemon = { id: id, shown: 1, picked: 1 };
+        const newCapturePokemon = { id: id, capture: 1, encounter: 1 };
         newResults.push(newCapturePokemon);
     }
 
