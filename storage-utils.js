@@ -12,12 +12,18 @@ export function getResults(){
     return result;
 }
 
-export function capturePokemon(id){
-    let results = getResults();
-    let item = findById(id, results);
-    item.capture++;
+export function capturePokemon(id) {
+    const newResults = getResults();
+    const capturePokemon = findById(id, newResults);
+    
+    if (capturePokemon){
+        capturePokemon.picked ++;  
+    } else {
+        const newCapturePokemon = { id: id, shown: 1, picked: 1 };
+        newResults.push(newCapturePokemon);
+    }
 
-    setResults(results);
+    setResults(newResults);
 }
 
 export function encounterPokemon(id){
