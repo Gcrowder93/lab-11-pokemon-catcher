@@ -4,19 +4,19 @@ body {
     align-items: center;
     text-align: center;
     margin: 20px;
-    background-color:violet
-/*
-    background-image: url(https://pm1.narvii.com/6878/43401b721bf9ea2f83a8274dd1b1922281112075r1-531-469v2_hq.jpg);
+    background-color: brown;
+   // background-image: url(https://cdn2.bulbagarden.net/upload/d/d0/Stark_Mountain_Exterior_Pt.png);
+}
 
-*/
-
+a {
+    background-color: yellow;
 }
 
 input[type=radio]{
     display:none;
 }
 
-input:checked + img {
+input[type=radio]:checked + img {
     border: solid tomato 2px;
     background-color: peachpuff;
     border-radius: 25%;
@@ -24,4 +24,12 @@ input:checked + img {
 
 div {
     display: flex;
+}
+
+#pokemonBanner {
+    height: 100px;
+}
+
+img {
+    height: 250px;
 }

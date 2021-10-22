@@ -1,5 +1,5 @@
 import { pokemon } from './src/pokemon.js';
-import { encounter } from './storage-utils.js';
+import { encounterPokemon } from './storage-utils.js';
 console.log(pokemon);
 
 const pokeImg1 = document.getElementById('poke1-img');
@@ -43,7 +43,7 @@ const generatePoke = ()=>{
         poke3
     ];
 };
-
+/*
 let pokemonGen = generatePoke();
 
 button.addEventListener('click', ()=>{
@@ -54,26 +54,25 @@ button.addEventListener('click', ()=>{
     encounter(pokemonGen[2]);
   
 });
+*/
 
-/*let totalPlays = 0;
-generatePoke()
+let totalPlays = 0;
+generatePoke();
 
 button.addEventListener('click', () => {
-    totalPlays++;
     const chosenRadio = document.querySelector('input [type=radio]:checked');
-    const chosenId = chosenRadio.value;
-    encounter(chosenId);
-
-    generatePoke();
-
+    let pokemonGen = generatePoke();
+    encounterPokemon(pokemonGen[0]);
+    encounterPokemon(pokemonGen[1]);
+    encounterPokemon(pokemonGen[2]);
     if (chosenRadio){
         const chosenId = chosenRadio.value;
         totalPlays++;
-        encounter(chosenId);
-        if (totalPlays >= 3){
+        encounterPokemon(chosenId);
+        if (totalPlays >= 10){
             window.location = './results.js';
         } else {
             generatePoke();
         }
     }
-});*/
+});

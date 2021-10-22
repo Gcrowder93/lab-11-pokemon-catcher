@@ -16,20 +16,20 @@
 </head>
 
 <body>
-    <header><img src="https://fontmeme.com/permalink/211020/db1337fc9cd7b250fb90ca05005bbf7a.png" alt="pokemon-font" border="0"></header>
+    <header><img id="pokemonBanner" src="https://fontmeme.com/permalink/211020/db1337fc9cd7b250fb90ca05005bbf7a.png" alt="pokemon-font" border="0"></header>
     <h1>Pokemon Catcher</h1>
     <main>
         <div id="pokemon">
             <label id="poke-radio1">
-            <input class ="radio1" type="radio">
+            <input name="mons" id="radio1" type="radio">
             <img id="poke1-img">
             </label>
             <label id="poke-radio2">
-            <input class="radio2" type="radio">
+            <input name="mons" id="radio2" type="radio">
             <img id="poke2-img">
             </label>
             <label id="poke-radio3">
-            <input id="radio3" type="radio">
+            <input name="mons" id="radio3" type="radio">
             <img id="poke3-img">
         </label>
         
@@ -37,13 +37,9 @@
         <button id="select">Select</button>
         
     </main>
-
     <footer>
-
         <hr><a href="./results/index.html">Data Page</a>
-        
     </footer>
-
     <script type="module" src="./app.js"></script>
 </body>
 
