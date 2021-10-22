@@ -23,7 +23,7 @@ test ('getResults returns the key "RESULTS" from localStorage',
         const results = [
             { id: 1, encounter: 0, capture: 0 }
         ];
-        localStorage.setItem('RESULTS', JSON.stingify(results));
+        localStorage.setItem('RESULTS', JSON.stringify(results));
         const actual = getResults();
         expect.deepEqual(actual, results);
     });
