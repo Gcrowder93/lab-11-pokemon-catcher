@@ -1,12 +1,12 @@
-/*
 import { pokemon } from '../src/pokemon.js';
-import { getPoke, findByPokemon } from '../storage-utils.js';
+import { getPoke, findById } from '../storage-utils.js';
 
 const result = getPoke();
+
 const resultString = document.getElementById('result-string');
 
 for (let poke of result) {
-    const pokemonId = findByPokemon(poke.id, pokemon);
+    const pokemonId = findById(poke.id, pokemon);
     const div = document.createElement('div');
     const img = document.createElement('img');
     img.src = pokemonId.url_image;
@@ -20,5 +20,4 @@ for (let poke of result) {
     resultString.append(div);
 
 }
-*/
 

@@ -5,11 +5,18 @@ body {
     text-align: center;
     margin: 20px;
     background-color: brown;
-   // background-image: url(https://cdn2.bulbagarden.net/upload/d/d0/Stark_Mountain_Exterior_Pt.png);
+    background-image: url(https://cdn2.bulbagarden.net/upload/d/d0/Stark_Mountain_Exterior_Pt.png);
+    background-size: cover;
+
 }
 
 a {
-    background-color: yellow;
+    background-color: darkgoldenrod;
+    font-size: 20px;
+    font-weight: bold;
+    size: 20px;
+    box-shadow: 3px 3px 3px darkslategray;
+
 }
 
 input[type=radio]{
@@ -32,4 +39,19 @@ div {
 
 img {
     height: 250px;
+}
+
+button {
+    box-shadow: 3px 3px 3px darkslategray;
+    background-color: goldenrod;
+    font-size: 20px;
+    font-weight: bold;
+    size: 20px;
+}
+
+#answer {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 25px;
+    background-color: goldenrod;
+    text-shadow: 1px 1px 1px blue;
 }

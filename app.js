@@ -1,6 +1,6 @@
 import { pokemon } from './src/pokemon.js';
 import { encounterPokemon } from './storage-utils.js';
-console.log(pokemon);
+import { capturePokemon } from './storage-utils.js';
 
 const pokeImg1 = document.getElementById('poke1-img');
 const pokeImg2 = document.getElementById('poke2-img');
@@ -26,7 +26,6 @@ const generatePoke = ()=>{
         rando2 = Math.floor(Math.random() * pokemon.length);
         rando3 = Math.floor(Math.random() * pokemon.length);
     }
-    console.log(rando1, rando2, rando3);
 
     let poke1 = pokemon[rando1];
     pokeImg1.src = poke1.url_image;
@@ -66,11 +65,11 @@ button.addEventListener('click', () => {
     encounterPokemon(pokemonGen[1]);
     encounterPokemon(pokemonGen[2]);
     if (chosenRadio){
-        const chosenId = chosenRadio.value;
+        const selectedId = Number(chosenRadio.value);
         totalPlays++;
-        encounterPokemon(chosenId);
+        capturePokemon(selectedId);
         if (totalPlays >= 10){
-            window.location = './results.js';
+            window.location = '../results.js';
         } else {
             generatePoke();
         }
