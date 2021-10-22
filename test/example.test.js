@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { encounterPokemon, getChosen, getResults, setResults } from '../storage-utils';
+import { encounterPokemon, getChosen, getResults, setResults } from '../storage-utils.js';
 const test = QUnit.test;
 
 test('time to test a function', (expect) => {
