@@ -1,7 +1,6 @@
-import { pokemon } from './src/pokemon.js';
+//import { pokemon } from './src/pokemon.js';
 
 export function findByPokemon(pokemon, pokes){
-
     for (let poke of pokes) {
         if (poke.id === pokemon){
             return poke;
@@ -10,24 +9,39 @@ export function findByPokemon(pokemon, pokes){
 }
 
 export function getPoke(){
-
     const pokeString = localStorage.getItem('POKEMON') || '[]';
     const pokemon = JSON.parse(pokeString);
-    
-    
     return pokemon;
+}
 
+export function getResults(){
+    const resultString = localStorage.getItem('RESULTS') || [];
+    const result = JSON.parse(resultString);
+    return result;
+}
+
+export function getChosen(){
+    const chosenString = localStorage.getItem('RESULT') || [];
+    const chosen = JSON.parse(chosenString);
+    return chosen;
+}
+
+export function capturePokemon(pokemon){
+    let results = getResults();
+    let poke = findByPokemon(pokemon, results);
+    poke.capture++;
+
+    const stringResult = JSON.stringify(results);
+    localStorage.setItem('RESULTS', stringResult);
 }
 
 export function encounter(pokemon){
     let pokeArray = getPoke();
     let foundPoke = findByPokemon(pokemon, pokeArray);
-
-
     if (foundPoke){
         foundPoke.encounter++;
-       // const pokeString = JSON.stringify(pokemon);
-       // localStorage.setItem('POKEMON', pokeString);
+        const pokeString = JSON.stringify(pokemon);
+        localStorage.setItem('POKEMON', pokeString);
     } else {
         const newPoke = {
             pokemon: pokemon.pokemon,
@@ -41,14 +55,3 @@ export function encounter(pokemon){
     return pokeArray;
 }
 
-export function getResults(){
-    const resultString = localStorage.getItem('RESULT') || [];
-    const result = JSON.parse(resultString);
-    return result;
-}
-
-export function getChosen(){
-    const chosenString = localStorage.getItem('RESULT') || [];
-    const chosen = JSON.parse(chosenString);
-    return chosen;
-}
