@@ -24,6 +24,7 @@
   "homepage": "https://github.com/dpcairns/alchemy-bootstrap-template#readme",
   "devDependencies": {
     "cypress": "^8.5.0",
+    "eslint": "^8.0.1",
     "eslint-plugin-cypress": "^2.12.1"
   },
   "dependencies": {
