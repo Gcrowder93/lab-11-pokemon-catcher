@@ -55,7 +55,7 @@ button.addEventListener('click', ()=>{
   
 });
 
-/*let totalPlays = 0;
+let totalPlays = 0;
 generatePoke()
 
 button.addEventListener('click', () => {
@@ -76,4 +76,4 @@ button.addEventListener('click', () => {
             generatePoke();
         }
     }
-});*/
+});

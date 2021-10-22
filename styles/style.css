@@ -16,7 +16,7 @@ input[type=radio]{
     display:none;
 }
 
-input:checked + img {
+input[type=radio]:checked + img {
     border: solid tomato 2px;
     background-color: peachpuff;
     border-radius: 25%;
