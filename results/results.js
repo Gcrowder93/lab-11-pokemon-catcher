@@ -2,37 +2,37 @@ import { pokemon } from '../src/pokemon.js';
 import { getResults, findById } from '../storage-utils.js';
 
 const results = getResults();
-
 const main = document.getElementById('main');
 
 for (let item of results){
-    const pokemon = findById(pokemon, item.id);
+    const pokeDex = findById(item.id, pokemon);
     const div = document.createElement('div');
     const img = document.createElement('img');
-    img.src = pokemon.image;
+    img.src = pokeDex.url_image;
     const header = document.createElement('h2');
-    header.textContent = pokemon.name;
+    header.textContent = pokeDex.name;
     const resultsSpan1 = document.createElement('span');
-    resultsSpan1.textContent = `Shown: ${item.shown}`;
-    const resultsSpan2 = document.getElementById('span2');
-    resultsSpan2.textContent = `Shown ${item.picked}`;
+    resultsSpan1.textContent = `Shown: ${item.encounter}-`;
+    const resultsSpan2 = document.createElement('span2');
+    resultsSpan2.textContent = `Picked: ${item.capture}` ;
 
     div.append(header, img, resultsSpan1, resultsSpan2);
     main.append(div);
 }
 
 const names = results.map((item)=>{
-    const pokemon = findById(pokemon, item.id);
-    return pokemon.name;
+    const pokeDex = findById(item.id, pokemon);
+    return pokeDex.id;
 });
 
 const picked = results.map((item)=>{
-    return item.picked;
+    return item.capture;
 });
 
 
 const ctx = document.getElementById('resultsChart').getContext('2d');
-const myChart = new Chart(ctx, {
+// eslint-disable-next-line no-undef
+new Chart(ctx, {
     type: 'bar',
     data: {
         labels: names,
