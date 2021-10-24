@@ -6,12 +6,6 @@ export function findById(id, items){
     }
 }
 
-export function getResults(){
-    const resultString = localStorage.getItem('RESULTS') || '[]';
-    const result = JSON.parse(resultString);
-    return result;
-}
-
 export function capturePokemon(id) {
     const newResults = getResults();
     const capturePokemon = findById(id, newResults);
@@ -22,21 +16,28 @@ export function capturePokemon(id) {
         const newCapturePokemon = { id: id, capture: 1, encounter: 1 };
         newResults.push(newCapturePokemon);
     }
-
+    
     setResults(newResults);
 }
 
 export function encounterPokemon(id){
     let results = getResults();
     let item = findById(id, results);
-
+    
     if (item){
         item.encounter++;
     } else {
         const newItem = { id: id, capture: 0, encounter: 1 };
         results.push(newItem);
+        
     }
     setResults(results);
+}
+
+export function getResults(){
+    const resultString = localStorage.getItem('RESULTS') || '[]';
+    const result = JSON.parse(resultString);
+    return result;
 }
 
 export function setResults(results){

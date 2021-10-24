@@ -15,18 +15,25 @@
     <link rel="stylesheet" href="../styles/results.css">
     <link rel="stylesheet" href="../styles/home.css">
  
-    <title>Pokemon</title>
+    <title>Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
 </head>
 <body>
     <header>
         <a href="../">Home</a>
     </header>
     <main>
-            
+        <section class="main-section" id="main">
+        </section>
+        <section class="chart">
+            <canvas id="resultsChart" width="400" height="400"></canvas>
+        </section>
+
     </main>
     
     <footer>
-        <div id="ball">
+        <!-- <div id="ball">
             <div class="box child-to-body">
                 <div class="poke_box">
                     <div class="pokeball">
@@ -34,7 +41,7 @@
                     </div>   
                 </div>
             </div>
-        </div>
+        </div> -->
     </footer>
 
     <script type="module" src="./results.js"></script>
