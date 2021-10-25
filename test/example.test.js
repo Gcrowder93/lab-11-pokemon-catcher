@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { encounterPokemon, getResults, setResults } from '../storage-utils.js';
+import { capturePokemon, encounterPokemon, getResults, setResults } from '../storage-utils.js';
 const test = QUnit.test;
 
 test('time to test a function', (expect) => {
@@ -62,7 +62,7 @@ test ('capturePokemon increments the capture key when the item exists in localSt
     const expected = [
         { id: 1, encounter: 1, capture: 1 },
     ];
-    encounterPokemon(1);
+    capturePokemon(1);
     const string = localStorage.getItem('RESULTS');
     const actual = JSON.parse(string);
     expect.deepEqual(actual, expected);
