@@ -7,17 +7,22 @@ body {
     background-color: brown;
     background-image: url(https://cdn2.bulbagarden.net/upload/d/d0/Stark_Mountain_Exterior_Pt.png);
     background-size: cover;
-    color: peachpuff
+}
+
+h1 {
+    box-shadow: 1px 1px 4px white;
+    background-color: rgba(89, 106, 255, 0.301);
+    color: goldenrod;
+    font-family: 'Mina', serif;
 
 }
 
-a {
-    background-color: darkgoldenrod;
-    font-size: 20px;
-    font-weight: bold;
-    size: 20px;
-    box-shadow: 3px 3px 3px darkslategray;
-
+h3 {
+    box-shadow: 1px 1px 4px white;
+    background-color: rgba(89, 106, 255, 0.301);
+    color: goldenrod;
+    font-family: 'Mina', serif;
+    margin: 2%, 2%;
 }
 
 input[type=radio]{
@@ -26,7 +31,7 @@ input[type=radio]{
 
 input[type=radio]:checked + img {
     border: solid tomato 2px;
-    background-color: peachpuff;
+    background-color: rgba(89, 106, 255, 0.301);
     border-radius: 25%;
 } 
 
@@ -43,16 +48,29 @@ img {
 }
 
 button {
-    box-shadow: 3px 3px 3px darkslategray;
-    background-color: goldenrod;
+    box-shadow: 1px 1px 4px white;
+    background-color: rgba(89, 106, 255, 0.301);
+    color: goldenrod;
+    font-size: 20px;
+    font-weight: bolder;
+    size: 20px;
+    font-family: 'Mina', serif;
+}
+
+a {
+    box-shadow: 1px 1px 4px white;
+    background-color: rgba(89, 106, 255, 0.301);
+    color: goldenrod;
     font-size: 20px;
     font-weight: bold;
     size: 20px;
+    font-family: 'Mina', serif;
 }
 
-#answer {
-    font-family:'Courier New', Courier, monospace;
-    font-size: 25px;
-    background-color: goldenrod;
-    text-shadow: 1px 1px 1px blue;
+a:visited {
+    color: dodgerblue;
+}
+
+button:hover {
+    color: dodgerblue;
 }

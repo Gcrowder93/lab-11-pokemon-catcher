@@ -8,8 +8,8 @@ const pokeImg3 = document.getElementById('poke3-img');
 const pokeRadio1 = document.getElementById('poke-radio1');
 const pokeRadio2 = document.getElementById('poke-radio2');
 const pokeRadio3 = document.getElementById('poke-radio3');
-const button = document.getElementById('select');
 
+const button = document.getElementById('select');
 
 const generatePoke = ()=>{
     let rando1 = Math.floor(Math.random() * pokemon.length);

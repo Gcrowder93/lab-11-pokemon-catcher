@@ -8,22 +8,34 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Mina&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/results.css">
     <link rel="stylesheet" href="../styles/home.css">
-   
-    <title>Pokemon</title>
+ 
+    <title>Results</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
 </head>
 <body>
-    <header>
-        <a href="../">Home</a>
-    </header>
+   
     <main>
-            
+        <h1>Welcome to the Results Page! <br>        <a href="../">Click here to choose again!</a>
+        </h1>
+        <section class="main-section" id="main">
+        </section>
+        
+        <section class="chart">
+            <canvas id="resultsChart" width="100" height="50"></canvas>
+        </section>
+
     </main>
     
     <footer>
-        <div id="ball">
+        <!-- <div id="ball">
             <div class="box child-to-body">
                 <div class="poke_box">
                     <div class="pokeball">
@@ -31,7 +43,7 @@
                     </div>   
                 </div>
             </div>
-        </div>
+        </div> -->
     </footer>
 
     <script type="module" src="./results.js"></script>
