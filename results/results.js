@@ -22,7 +22,7 @@ for (let item of results){
 
 const names = results.map((item)=>{
     const pokeDex = findById(item.id, pokemon);
-    return pokeDex.id;
+    return pokeDex.pokemon;
 });
 
 const picked = results.map((item)=>{
