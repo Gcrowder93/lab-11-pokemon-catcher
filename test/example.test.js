@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { encounterPokemon, getResults, setResults } from '../storage-utils.js';
+import { capturePokemon, encounterPokemon, getResults, setResults } from '../storage-utils.js';
 const test = QUnit.test;
 
 test('time to test a function', (expect) => {
@@ -28,7 +28,7 @@ test ('getResults returns the key "RESULTS" from localStorage',
         expect.deepEqual(actual, results);
     });
 
-test ('setResults returns and empty array if there is no RESULTS key in localStorage', (expect)=>{
+test ('setResults returns an empty array if there is no RESULTS key in localStorage', (expect)=>{
     localStorage.removeItem('RESULTS');
     const expected = [];
     setResults(expected);
@@ -48,11 +48,21 @@ test ('setResults returns and empty array if there is no RESULTS key in localSto
 //     expect.deepEqual(actual, actual);
 // });
 
-test ('encounterPokemon increments the shown keu when the item exists in results', (expect) => {
+test ('encounterPokemon increments the shown key when the item exists in results', (expect) => {
     const expected = [
         { id: 1, encounter: 1, capture: 0 },
     ];
     encounterPokemon(1);
+    const string = localStorage.getItem('RESULTS');
+    const actual = JSON.parse(string);
+    expect.deepEqual(actual, expected);
+});
+
+test ('capturePokemon increments the capture key when the item exists in localStorage', (expect) => {
+    const expected = [
+        { id: 1, encounter: 1, capture: 1 },
+    ];
+    capturePokemon(1);
     const string = localStorage.getItem('RESULTS');
     const actual = JSON.parse(string);
     expect.deepEqual(actual, expected);
